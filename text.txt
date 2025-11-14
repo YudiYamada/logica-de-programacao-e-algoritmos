@@ -1,0 +1,37 @@
+**Aqui estão os tópicos essenciais para entender busca linear e notação Big O, com links para conteúdos confiáveis e atualizados para estudo.**
+
+---
+
+### 📦 Arrays e estruturas de dados básicas
+- **O que são arrays, objetos, pilhas, filas, listas e árvores**
+- Como acessar e manipular elementos
+
+
+
+---
+
+### 🔁 Laços de repetição
+- **for**, **while**, **do...while**, **forEach**
+- Iteração sobre arrays e objetos
+
+
+
+---
+
+### 📊 Análise de complexidade e notação Big O
+- Diferença entre **melhor caso**, **pior caso** e **caso médio**
+- Como medir tempo e espaço de execução
+
+
+
+---
+
+### 🧩 Funções e retornos
+- Como declarar funções, usar parâmetros e retornar valores
+- Entender o fluxo de execução e encerramento da função
+
+
+
+---
+
+Se quiser, posso montar um plano de estudos ou exercícios práticos para cada tópico. É só dizer!

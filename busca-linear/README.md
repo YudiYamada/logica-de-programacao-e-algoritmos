@@ -37,8 +37,8 @@ Ela **não mede tempo real**, mas sim o **comportamento de crescimento** — ou 
 
 A busca linear tem **complexidade de tempo O(n)**, porque:
 
-* No **pior caso**, o algoritmo precisa percorrer **todos os elementos** da lista;
-* O número de operações cresce **proporcionalmente** ao tamanho da entrada `n`.
+- No **pior caso**, o algoritmo precisa percorrer **todos os elementos** da lista;
+- O número de operações cresce **proporcionalmente** ao tamanho da entrada `n`.
 
 ### Exemplo:
 
@@ -89,17 +89,28 @@ for (let item of lista) {
 Para compreender bem a **notação Big O** e a **busca linear**, é importante estudar:
 
 1. **Arrays e estruturas de dados básicas**
+   - Saber como funcionam e como acessar elementos.
+     🔗 [MDN – Estrutura de dados do JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Data_structures)  
+     🔗 [Blog Casa do Desenvolvedor – Arrays em JavaScript](https://blog.casadodesenvolvedor.com.br/arrays-em-javascript/)  
+     🔗 [DEV.to – Estruturas de dados com exemplos](https://dev.to/trinity_/estruturas-de-dados-em-javascript-com-exemplos-de-codigo-4an0)
 
-   * Saber como funcionam e como acessar elementos.
 2. **Laços de repetição**
+   - `for`, `while`, `for...of`, `forEach`.
+     🔗 [MDN – Laços e iterações](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Loops_and_iteration)  
+     🔗 [YouTube – Aula sobre laços de repetição](https://www.youtube.com/watch?v=SYMxV4HM224)  
+     🔗 [freeCodeCamp – Laços explicados](https://www.freecodecamp.org/portuguese/news/lacos-em-javascript-explicados-lacos-for-while-do-while-e-mais/)
 
-   * `for`, `while`, `for...of`, `forEach`.
 3. **Análise de complexidade**
+   - Entender a diferença entre _melhor_, _pior_ e _caso médio_.
+     🔗 [freeCodeCamp – O que é a notação Big O](https://www.freecodecamp.org/portuguese/news/o-que-e-a-notacao-big-o-complexidade-de-tempo-e-de-espaco/)  
+     🔗 [DataCamp – Guia de complexidade de tempo](https://www.datacamp.com/pt/tutorial/big-o-notation-time-complexity)  
+     🔗 [Guia de algoritmos – Big O](https://guievbs.github.io/sorting-algorithms/big_o/)
 
-   * Entender a diferença entre *melhor*, *pior* e *caso médio*.
 4. **Funções e retornos**
-
-   * Compreender quando uma função termina e como isso afeta o tempo de execução.
+   - Compreender quando uma função termina e como isso afeta o tempo de execução.
+     🔗 [MDN – Funções em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions)  
+     🔗 [Hashtag Treinamentos – Parâmetros e retornos](https://www.hashtagtreinamentos.com/parametros-argumentos-e-retornos-em-javascript)  
+     🔗 [JavaScript Progressivo – Funções com retorno](https://www.javascriptprogressivo.net/2018/12/Funcao-Parametro-Argumento-Retorno.html)
 
 ---
 
@@ -161,7 +172,7 @@ Exemplo:
 const frutas = ["maçã", "banana", "uva", "manga"];
 
 console.log(frutas.includes("banana")); // true → O(n)
-console.log(frutas.indexOf("manga"));   // 3 → O(n)
+console.log(frutas.indexOf("manga")); // 3 → O(n)
 ```
 
 ---
