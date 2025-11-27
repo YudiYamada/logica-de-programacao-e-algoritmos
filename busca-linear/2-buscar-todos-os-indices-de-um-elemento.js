@@ -1,3 +1,5 @@
+// Exercício buscar todos os índices de um elemento
+
 // Dado o vetor:
 
 let arr = [4, 9, 2, 9, 7, 1, 9];
@@ -21,6 +23,13 @@ let arr = [4, 9, 2, 9, 7, 1, 9];
 // - Condicionais: if
 // - Comparação de valores (===)
 // - Manipulação de arrays (push, join)
+
+// Complexidade de tempo (Big O):
+// O algoritmo percorre todos os elementos do array para verificar se são iguais ao alvo.
+// No pior caso, ele precisa visitar todos os n elementos do array.
+// Por isso, a notação Big O é O(n), onde n é o tamanho do array.
+// Identificação: feita observando que o laço "for" executa até arr.length vezes,
+// e cada iteração realiza apenas operações constantes (comparação e push).
 
 // Implementação da função:
 function buscarLinearTodos(arr, target) {

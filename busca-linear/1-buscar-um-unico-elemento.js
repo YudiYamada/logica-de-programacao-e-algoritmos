@@ -1,3 +1,5 @@
+// Exercício buscar um único elemento
+
 // Dado o vetor:
 
 let arr = [12, 5, 8, 20, 15, 7, 30];
@@ -12,6 +14,18 @@ let arr = [12, 5, 8, 20, 15, 7, 30];
 // - Índice 4 → valor = 15 → achou!
 
 // Resposta: O índice retornado é 4 (lembrando que os índices começam em 0).
+
+// Assuntos que você precisa saber para resolver esse exercício:
+// - Estruturas de dados: vetores/arrays
+// - Estruturas de repetição: for
+// - Condicionais: if
+// - Comparação de valores (===)
+
+// Complexidade de tempo (Big O):
+// O algoritmo percorre o array elemento por elemento até encontrar o alvo ou chegar ao fim.
+// No pior caso, ele precisa verificar todos os n elementos do array.
+// Por isso, a notação Big O é O(n), onde n é o tamanho do array.
+// Identificação: feita observando que o laço "for" pode executar até arr.length vezes.
 
 function buscarLinear(arr, target) {
   for (let i = 0; i < arr.length; i++) {
