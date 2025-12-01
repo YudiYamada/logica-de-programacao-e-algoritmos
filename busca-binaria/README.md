@@ -21,8 +21,8 @@ Em vez de verificar elemento por elemento (como na busca linear), a busca binár
 
 ```js
 function buscaBinaria(arr, alvo) {
-  let inicio = 0;
-  let fim = arr.length - 1;
+  let inicio = 0; // pega o início do array
+  let fim = arr.length - 1; // pega o final do aray
 
   while (inicio <= fim) {
     let meio = Math.floor((inicio + fim) / 2); // Encontra o índice do meio
@@ -106,16 +106,29 @@ while (inicio <= fim) {
 Para compreender bem a **busca binária** e sua complexidade, é fundamental dominar:
 
 1.  **Arrays Ordenados**
+
     - Entender a importância da ordenação prévia dos dados.
     - O custo de ordenar um array é geralmente **O(n log n)** (com algoritmos como Merge Sort ou Quick Sort).
+
+    🔗 [MDN – Array.prototype.sort() em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
 2.  **Conceito de Logaritmos**
+
     - Entender que $\log_2 n$ é o número de vezes que você pode dividir $n$ pela metade.
+
+    🔗 [Khan Academy – Introdução aos logaritmos (artigo)](https://pt.khanacademy.org/a/intro-to-logarithms)
+
 3.  **Ponteiros/Índices de Controle**
+
     - Uso de variáveis como `inicio`, `fim` e `meio` para controlar o espaço de busca.
-    <!-- end list -->
-    4.  **Estruturas de Controle**
-    <!-- end list -->
+
+    🔗 [Khan Academy – Implementação de busca binária de um array](https://pt.khanacademy.org/computing/computer-science/algorithms/binary-search/a/implementing-binary-search-of-an-array)
+
+4.  **Estruturas de Controle**
+
     - `while` (Laços de repetição) e `if`/`else` (Condicionais).
+
+    🔗 [MDN – if...else em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/if...else)
 
 ---
 
