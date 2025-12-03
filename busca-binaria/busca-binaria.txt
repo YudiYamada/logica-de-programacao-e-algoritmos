@@ -24,6 +24,9 @@ Como Funciona:
 
 Exemplo em JavaScript:
 -----------------------
+
+Abordagem Iterativa (Recomendada):
+
 function buscaBinaria(arr, alvo) {
   let inicio = 0; // pega o início do array
   let fim = arr.length - 1; // pega o final do aray
@@ -42,6 +45,38 @@ function buscaBinaria(arr, alvo) {
 
   return -1; // O alvo não foi encontrado
 }
+
+Abordagem Recursiva:
+Útil para entender o conceito de "Dividir e Conquistar", mas consome mais memória devido à pilha de chamadas (call stack).
+
+function buscaBinariaRecursiva(arr, alvo, inicio = 0, fim = arr.length - 1) {
+  // Caso base: intervalo inválido
+  if (inicio > fim) {
+    return -1; // não encontrado
+  }
+
+  // Calcula o índice do meio
+  let meio = Math.floor((inicio + fim) / 2);
+
+  // Verifica se encontrou o alvo
+  if (arr[meio] === alvo) {
+    return meio;
+  }
+
+  // Se o alvo é maior, busca na metade direita
+  if (arr[meio] < alvo) {
+    return buscaBinariaRecursiva(arr, alvo, meio + 1, fim);
+  }
+
+  // Caso contrário, busca na metade esquerda
+  return buscaBinariaRecursiva(arr, alvo, inicio, meio - 1);
+}
+
+
+// Testando
+const numerosOrdenados = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+console.log(buscaBinariaRecursiva(numerosOrdenados, 40)); // saída: 3
+console.log(buscaBinariaRecursiva(numerosOrdenados, 15)); // saída: -1
 
 // O array DEVE estar ordenado para que a busca binária funcione!
 const numerosOrdenados = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
