@@ -1,0 +1,87 @@
+Merge Sort e Notação Big O (JavaScript)
+
+O que é o Merge Sort
+--------------------
+O Merge Sort é um algoritmo de ordenação baseado na técnica "Dividir e Conquistar".
+Ele divide o array em partes menores, ordena essas partes e depois mescla (merge) os resultados em um array final ordenado.
+
+Como funciona:
+1. Divisão: o array é dividido recursivamente em duas metades até que cada subarray tenha apenas um elemento.
+2. Conquista: cada subarray é considerado ordenado (já que contém apenas um elemento).
+3. Combinação (Merge): os subarrays são mesclados em pares, comparando elementos e formando arrays maiores já ordenados.
+4. Resultado final: ao final das mesclagens, o array completo estará ordenado.
+
+Exemplo em JavaScript
+---------------------
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const meio = Math.floor(arr.length / 2);
+  const esquerda = mergeSort(arr.slice(0, meio));
+  const direita = mergeSort(arr.slice(meio));
+
+  return merge(esquerda, direita);
+}
+
+function merge(esquerda, direita) {
+  let resultado = [];
+  let i = 0, j = 0;
+
+  while (i < esquerda.length && j < direita.length) {
+    if (esquerda[i] < direita[j]) {
+      resultado.push(esquerda[i]);
+      i++;
+    } else {
+      resultado.push(direita[j]);
+      j++;
+    }
+  }
+
+  return resultado.concat(esquerda.slice(i)).concat(direita.slice(j));
+}
+
+// Exemplo de uso:
+const numeros = [38, 27, 43, 3, 9, 82, 10];
+console.log(mergeSort(numeros));
+// saída: [3, 9, 10, 27, 38, 43, 82]
+
+Complexidade do Merge Sort
+--------------------------
+Tempo: O(n log n) em todos os casos (melhor, pior e médio).
+Espaço: O(n), pois precisa de memória extra para armazenar subarrays.
+
+Melhor, Pior e Caso Médio
+-------------------------
+Melhor caso: O(n log n)
+Pior caso: O(n log n)
+Caso médio: O(n log n)
+
+Como reconhecer um algoritmo O(n log n)
+---------------------------------------
+- Divide o problema em partes menores (recursão).
+- Cada divisão gera log n níveis de recursão.
+- Em cada nível, percorre todos os elementos (n).
+- Padrão típico: Divide and Conquer.
+
+Comparação com outros algoritmos
+--------------------------------
+O(1)       → Acesso direto em array
+O(log n)   → Busca Binária
+O(n)       → Busca Linear
+O(n log n) → Merge Sort, Quick Sort
+O(n²)      → Bubble Sort
+
+Resumo Final
+------------
+Algoritmo: Ordena dividindo o array em partes menores e mesclando resultados.
+Complexidade: O(n log n) em todos os casos.
+Espaço extra: O(n).
+Motivo: Divide em log n níveis e percorre n elementos em cada nível.
+Resposta curta: "O Merge Sort é O(n log n), pois divide o array e mescla em cada nível."
+
+Autor
+-----
+Yudi Yamada
+LinkedIn: https://www.linkedin.com/in/yudi-yamada-0a10181b9/
