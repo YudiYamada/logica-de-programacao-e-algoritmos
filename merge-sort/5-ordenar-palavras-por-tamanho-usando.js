@@ -1,17 +1,17 @@
-// Exercício ordenar nomes em ordem alfabética usando Merge Sort
+// Exercício ordenar palavras por tamanho usando Merge Sort
 
 // Dado o vetor:
-let nomes = [
-  "Carlos",
-  "Ana",
-  "Beatriz",
-  "Eduardo",
-  "Daniel",
-  "Fernanda",
-  "Bruno",
+let palavras = [
+  "computador",
+  "sol",
+  "programação",
+  "código",
+  "AI",
+  "javascript",
+  "merge",
 ];
 
-// Use o algoritmo Merge Sort para ordenar os elementos em ordem alfabética (A → Z).
+// Use o algoritmo Merge Sort para ordenar as palavras em ordem crescente de tamanho (número de caracteres).
 
 // Passo a passo do Merge Sort
 // - Divisão: o array é dividido recursivamente em duas metades até que cada subarray tenha apenas 1 elemento.
@@ -19,7 +19,8 @@ let nomes = [
 // - Combinação (Merge): mescla os subarrays comparando elemento por elemento.
 // - Resultado final: ao final das mesclagens, o array completo estará ordenado.
 
-// Resposta esperada: ["Ana", "Beatriz", "Bruno", "Carlos", "Daniel", "Eduardo", "Fernanda"]
+// Resposta esperada:
+// ["AI", "sol", "merge", "código", "javascript", "computador", "programação"]
 
 // Assuntos que você precisa saber para resolver esse exercício:
 // - Estruturas de dados: vetores/arrays
@@ -27,7 +28,7 @@ let nomes = [
 // - Manipulação de arrays: slice, concat
 // - Estruturas de repetição: while
 // - Condicionais: if
-// - Comparação de strings em JavaScript (operador <)
+// - Comparação de strings pelo tamanho (length)
 
 // Complexidade de tempo (Big O):
 // O Merge Sort tem complexidade O(n log n) em todos os casos.
@@ -41,12 +42,12 @@ function merge(arrLeft, arrRight) {
 
   // Enquanto houver elementos em ambos os arrays
   while (i < arrLeft.length && j < arrRight.length) {
-    // Compara os elementos atuais de cada array
-    if (arrLeft[i] < arrRight[j]) {
-      arrResult.push(arrLeft[i]); // Adiciona o menor nome ao resultado
+    // Compara o tamanho das strings (length)
+    if (arrLeft[i].length < arrRight[j].length) {
+      arrResult.push(arrLeft[i]); // Adiciona a menor palavra (em tamanho) ao resultado
       i++; // Avança no array da esquerda
     } else {
-      arrResult.push(arrRight[j]); // Adiciona o menor nome ao resultado
+      arrResult.push(arrRight[j]); // Adiciona a menor palavra (em tamanho) ao resultado
       j++; // Avança no array da direita
     }
   }
@@ -58,21 +59,19 @@ function merge(arrLeft, arrRight) {
 
 function mergeSort(arr) {
   // Caso base: arrays com 0 ou 1 elemento já estão ordenados
-  if (arr.length <= 1) {
-    return arr;
-  }
+  if (arr.length <= 1) return arr;
 
   // Calcula o índice do meio para dividir o array
-  const mid = Math.floor(arr.length / 2);
+  let mid = Math.floor(arr.length / 2);
 
   // Divide o array em duas metades
-  const arrLeft = mergeSort(arr.slice(0, mid)); // primeira metade
-  const arrRight = mergeSort(arr.slice(mid)); // segunda metade
+  let leftSort = mergeSort(arr.slice(0, mid)); // primeira metade
+  let rightSort = mergeSort(arr.slice(mid)); // segunda metade
 
   // Combina as duas metades ordenadas
-  return merge(arrLeft, arrRight);
+  return merge(leftSort, rightSort);
 }
 
 // Testando
-console.log("Array original:", nomes);
-console.log("Array ordenado:", mergeSort(nomes));
+console.log("Array original:", palavras);
+console.log("Array ordenado:", mergeSort(palavras));
