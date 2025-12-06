@@ -60,6 +60,51 @@ console.log(mergeSort(numeros));
 // saída: [3, 9, 10, 27, 38, 43, 82]
 ```
 
+Explicação:
+
+🔹 Função `merge(arrLeft, arrRight)`
+
+- **O que faz:**
+Recebe **dois subarrays já ordenados** e combina em um único array também ordenado.
+- **Como funciona:**
+    - Compara elemento por elemento dos dois subarrays.
+    - Vai colocando no array resultado (`arrResult`) sempre o menor dos dois valores.
+    - Quando um dos subarrays acaba, concatena o restante do outro.
+- **Responsabilidade:**
+É a parte da **combinação** (merge) do algoritmo.
+👉 Ela **não sabe dividir** o array, só sabe juntar dois arrays ordenados.
+
+🔹 Função `mergeSort(arr)`
+
+- **O que faz:**
+É a função **recursiva** que divide o array em metades até chegar em subarrays de tamanho 1.
+- **Como funciona:**
+    - Se o array tem 1 elemento, já está ordenado → retorna.
+    - Caso contrário, divide em duas metades (`left` e `right`).
+    - Chama recursivamente `mergeSort` para ordenar cada metade.
+    - Usa a função `merge` para juntar as duas metades ordenadas.
+- **Responsabilidade:**
+É a parte da **divisão e recursão** do algoritmo.
+👉 Ela **não sabe combinar** arrays, só sabe dividir e delegar a junção para `merge`.
+
+❓ Por que não dá para usar só uma função?
+
+- Se você tivesse apenas `merge`, ela não conseguiria ordenar o array inteiro, porque só sabe **juntar arrays já ordenados**.
+- Se você tivesse apenas `mergeSort`, faltaria a lógica de **como juntar** as metades ordenadas — sem `merge`, você ficaria com duas listas ordenadas separadas, mas não teria o array final.
+
+Ou seja:
+
+- `mergeSort` → **divide e organiza** a recursão.
+- `merge` → **combina** os pedaços ordenados.
+
+Eles se complementam: uma sem a outra não resolve o problema.
+
+👉 Pense assim:
+
+- `mergeSort` é o **arquiteto** que planeja a divisão do trabalho.
+- `merge` é o **pedreiro** que realmente junta as peças.
+Sem arquiteto, não há plano; sem pedreiro, não há construção.
+
 ---
 
 ## ⏱️ Complexidade do Merge Sort
