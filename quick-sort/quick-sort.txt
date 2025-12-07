@@ -1,0 +1,83 @@
+📘 Quick Sort e Notação Big O (JavaScript)
+
+🔍 O que é o Quick Sort
+O Quick Sort é um algoritmo de ordenação baseado em Dividir e Conquistar.
+Ele escolhe um pivô e reorganiza os elementos em torno dele:
+- Menores que o pivô → esquerda
+- Maiores ou iguais → direita
+Depois aplica recursão em cada lado até ordenar todo o array.
+
+💻 Exemplo em JavaScript (versão simples)
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+  const pivot = arr[arr.length - 1];
+  const left = [], right = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] < pivot) left.push(arr[i]);
+    else right.push(arr[i]);
+  }
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}
+console.log(quickSort([38, 27, 43, 10]));
+// saída: [10, 27, 38, 43]
+
+💻 Exemplo em JavaScript (versão in-place)
+function partition(arr, low, high) {
+  const pivot = arr[high];
+  let i = low - 1;
+  for (let j = low; j < high; j++) {
+    if (arr[j] < pivot) {
+      i++;
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
+  return i + 1;
+}
+function quickSort(arr, low = 0, high = arr.length - 1) {
+  if (low < high) {
+    const pi = partition(arr, low, high);
+    quickSort(arr, low, pi - 1);
+    quickSort(arr, pi + 1, high);
+  }
+  return arr;
+}
+console.log(quickSort([38, 27, 43, 3, 9, 82, 10]));
+// saída: [3, 9, 10, 27, 38, 43, 82]
+
+⏱️ Complexidade do Quick Sort
+- Melhor caso: O(n log n)
+- Caso médio: O(n log n)
+- Pior caso: O(n²) (quando o pivô é mal escolhido)
+Espaço:
+- In-place: O(log n)
+- Versão simples: O(n)
+
+⚙️ Melhor, Pior e Caso Médio
+Melhor caso → pivô divide igualmente → O(n log n)
+Pior caso → pivô sempre menor/maior → O(n²)
+Caso médio → divisão razoável → O(n log n)
+
+🧩 Como reconhecer O(n log n)
+- Divide o problema em partes menores
+- Gera log n níveis de recursão
+- Em cada nível percorre n elementos
+Exemplos: Quick Sort, Merge Sort, Heap Sort
+
+📚 O que estudar para entender
+- Recursão
+- Arrays e índices
+- Estratégia Divide and Conquer
+
+⚖️ Comparação com outros algoritmos
+O(1) → acesso direto em array
+O(log n) → busca binária
+O(n) → busca linear
+O(n log n) → Quick Sort, Merge Sort
+O(n²) → Bubble Sort
+
+🧩 Resumo Final
+Algoritmo → ordena escolhendo pivô e particionando
+Complexidade → O(n log n) no melhor/médio; O(n²) no pior
+Espaço → O(log n) in-place ou O(n) com arrays auxiliares
+Resposta curta → “O Quick Sort é O(n log n), mas pode ser O(n²) se o pivô for mal escolhido.”
