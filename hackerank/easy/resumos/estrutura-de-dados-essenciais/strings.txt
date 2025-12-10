@@ -1,0 +1,56 @@
+Resumo - Strings em JavaScript
+
+1) Concatenação
+- Juntar duas ou mais strings em uma só.
+- Operadores e métodos:
+  const a = "Hello";
+  const b = "World";
+  const c = a + " " + b;        // "Hello World"
+  const d = a.concat(" ", b);   // "Hello World"
+  const e = `${a} ${b}`;        // Template literal → "Hello World"
+
+2) Fatiamento (Substring / Slice)
+- Extrair parte de uma string.
+- Métodos:
+  const texto = "JavaScript";
+  texto.slice(0, 4);    // "Java"
+  texto.substring(4, 10); // "Script"
+  texto.substr(4, 6);   // "Script" (deprecated, mas ainda usado)
+- Observação: índices começam em 0.
+
+3) Inversão
+- Não existe método nativo para inverter string.
+- Solução comum:
+  const palavra = "abc";
+  const invertida = palavra.split("").reverse().join(""); // "cba"
+
+4) Contagem de caracteres
+- Usar a propriedade length:
+  const frase = "Olá mundo";
+  frase.length; // 9 (conta espaços também)
+- Contar ocorrências específicas:
+  const texto = "banana";
+  const countA = texto.split("a").length - 1; // 3
+
+5) Comparação de substrings
+- Comparar partes de strings:
+  const s1 = "JavaScript";
+  const s2 = "Java";
+  s1.startsWith(s2); // true
+  s1.endsWith("Script"); // true
+  s1.includes("ava"); // true
+- Comparação direta:
+  "abc" === "abc"; // true
+  "abc" === "ABC"; // false (case-sensitive)
+
+6) Aplicações práticas
+- Concatenação: montar mensagens dinâmicas.
+- Fatiamento: extrair prefixos, sufixos ou partes de dados (ex: códigos).
+- Inversão: verificar palíndromos.
+- Contagem: análise de frequência de caracteres.
+- Comparação: busca de padrões em textos.
+
+Resumo:
+- Strings em JS são imutáveis, mas podem ser manipuladas com métodos.
+- Concatenação, fatiamento e inversão permitem criar e transformar textos.
+- length fornece o tamanho, e métodos como startsWith, endsWith e includes ajudam na comparação.

@@ -1,0 +1,46 @@
+Resumo - Conjuntos (Sets) em JavaScript
+
+1) Definição
+- Set é uma estrutura de dados que armazena valores únicos, sem duplicados.
+- Exemplo:
+  const conjunto = new Set([1, 2, 3, 3, 4]);
+  console.log(conjunto); // Set { 1, 2, 3, 4 }
+
+2) Remoção de duplicados
+- Criar um Set a partir de um array remove automaticamente valores repetidos.
+  const numeros = [1, 2, 2, 3, 4, 4, 5];
+  const semDuplicados = [...new Set(numeros)];
+  console.log(semDuplicados); // [1, 2, 3, 4, 5]
+
+3) Operações de União
+- União: juntar elementos de dois conjuntos sem repetir.
+  const a = new Set([1, 2, 3]);
+  const b = new Set([3, 4, 5]);
+  const uniao = new Set([...a, ...b]);
+  console.log(uniao); // Set { 1, 2, 3, 4, 5 }
+
+4) Operações de Interseção
+- Interseção: elementos comuns entre dois conjuntos.
+  const a = new Set([1, 2, 3]);
+  const b = new Set([3, 4, 5]);
+  const intersecao = new Set([...a].filter(x => b.has(x)));
+  console.log(intersecao); // Set { 3 }
+
+5) Métodos úteis
+- conjunto.add(6);    // adiciona elemento
+- conjunto.delete(2); // remove elemento
+- conjunto.has(3);    // verifica existência → true
+- conjunto.size;      // retorna quantidade de elementos
+- conjunto.clear();   // remove todos os elementos
+
+6) Aplicações práticas
+- Remover duplicados de listas.
+- Verificar se um elemento pertence a um conjunto.
+- Operações matemáticas de união e interseção em conjuntos de dados.
+- Criar coleções únicas (ex: IDs, nomes, categorias).
+
+Resumo:
+- Sets armazenam valores únicos e são ideais para eliminar duplicados.
+- União combina elementos sem repetição.
+- Interseção encontra elementos comuns entre conjuntos.
+- Métodos nativos tornam a manipulação simples e eficiente.

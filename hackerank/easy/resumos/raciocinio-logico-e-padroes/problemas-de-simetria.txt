@@ -1,0 +1,42 @@
+Resumo - Raciocínio Lógico e Padrões: Problemas de Simetria em JavaScript
+
+1) Palíndromos
+- Definição: uma palavra ou frase que pode ser lida da mesma forma de frente para trás.
+- Exemplos: "arara", "radar", "ana".
+- Verificação em JavaScript:
+  function ehPalindromo(str) {
+    const invertida = str.split("").reverse().join("");
+    return str === invertida;
+  }
+  console.log(ehPalindromo("arara")); // true
+  console.log(ehPalindromo("casa"));  // false
+
+- Observação: pode ser útil normalizar (remover espaços, pontuação, e usar `.toLowerCase()`).
+
+2) Inversão de Strings
+- Definição: transformar uma string em sua versão invertida.
+- Exemplo:
+  const palavra = "abc";
+  const invertida = palavra.split("").reverse().join("");
+  console.log(invertida); // "cba"
+
+- Uso comum: verificar palíndromos, criar padrões simétricos, manipulação de dados.
+
+3) Casos especiais
+- Strings vazias → inversão retorna string vazia, palíndromo considerado verdadeiro.
+- Strings com espaços/pontuação → podem afetar resultado, é comum limpar antes da verificação.
+  Exemplo:
+  function normalizar(str) {
+    return str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  }
+
+4) Aplicações práticas
+- Verificação de palíndromos em exercícios de lógica.
+- Criação de padrões simétricos em jogos ou puzzles.
+- Processamento de texto (ex: detectar palavras especiais).
+- Exercícios de programação para treinar manipulação de strings.
+
+Resumo:
+- Palíndromos são exemplos clássicos de simetria em lógica.
+- Inversão de strings é a técnica básica para verificar simetria.
+- Normalização é importante para lidar com espaços e maiúsculas/minúsculas.

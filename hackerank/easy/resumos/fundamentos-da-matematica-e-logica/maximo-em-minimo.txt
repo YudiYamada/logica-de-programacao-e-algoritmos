@@ -1,0 +1,40 @@
+Resumo - Máximo e Mínimo em Listas (JavaScript)
+
+1) Funções nativas do Math
+- Math.max(...lista) → retorna o maior valor.
+- Math.min(...lista) → retorna o menor valor.
+- Exemplo:
+  const numeros = [3, 7, 2, 9, 5];
+  const maximo = Math.max(...numeros); // 9
+  const minimo = Math.min(...numeros); // 2
+
+2) Uso com arrays grandes
+- O operador spread (...) pode causar erro em listas muito grandes.
+- Alternativa: usar reduce().
+  const maximo = numeros.reduce((a, b) => Math.max(a, b));
+  const minimo = numeros.reduce((a, b) => Math.min(a, b));
+
+3) Iteração manual
+- Percorrer a lista e comparar valores:
+  let max = numeros[0];
+  let min = numeros[0];
+  for (let i = 1; i < numeros.length; i++) {
+    if (numeros[i] > max) max = numeros[i];
+    if (numeros[i] < min) min = numeros[i];
+  }
+
+4) Casos especiais
+- Lista vazia:
+  Math.max() // -Infinity
+  Math.min() // Infinity
+- Solução: verificar se o array tem elementos antes de calcular.
+
+5) Aplicações práticas
+- Encontrar nota máxima e mínima em avaliações.
+- Determinar maior e menor preço em uma lista de produtos.
+- Calcular limites em séries temporais (ex: temperatura máxima e mínima).
+
+Resumo:
+- Use Math.max e Math.min com spread para listas pequenas.
+- Para listas grandes, prefira reduce ou loops.
+- Sempre trate casos de listas vazias para evitar resultados inesperados.

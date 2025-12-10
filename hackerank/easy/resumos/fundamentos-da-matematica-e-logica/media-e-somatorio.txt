@@ -1,0 +1,41 @@
+Resumo - Média e Somatório em JavaScript
+
+1) Somatório (Soma de elementos)
+- Descrição: calcular a soma de todos os valores de uma lista.
+- Métodos:
+  a) Usando reduce():
+     const numeros = [2, 4, 6, 8];
+     const soma = numeros.reduce((acc, val) => acc + val, 0); // 20
+
+  b) Usando loop:
+     let soma = 0;
+     for (let i = 0; i < numeros.length; i++) {
+       soma += numeros[i];
+     }
+
+2) Média (Valor médio)
+- Descrição: soma dos elementos dividida pela quantidade.
+- Fórmula: média = soma / quantidade
+- Exemplo:
+  const numeros = [2, 4, 6, 8];
+  const soma = numeros.reduce((acc, val) => acc + val, 0); // 20
+  const media = soma / numeros.length; // 5
+
+3) Casos especiais
+- Lista vazia:
+  - Somatório: 0
+  - Média: NaN (divisão por zero)
+  - Solução: verificar se o array tem elementos antes de calcular.
+    if (numeros.length > 0) {
+      const media = soma / numeros.length;
+    }
+
+4) Aplicações práticas
+- Calcular média de notas de alunos.
+- Somar preços de produtos em um carrinho de compras.
+- Determinar média de temperaturas em um período.
+
+Resumo:
+- Use reduce() para somatório de forma simples e legível.
+- Média é obtida dividindo a soma pelo tamanho da lista.
+- Sempre trate listas vazias para evitar erros.

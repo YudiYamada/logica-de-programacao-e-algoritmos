@@ -1,0 +1,65 @@
+Resumo - Estruturas de Controle: Condicionais em JavaScript
+
+1) Estrutura básica
+- Condicionais permitem executar blocos de código dependendo de uma condição booleana (true/false).
+- Sintaxe:
+  if (condicao) {
+    // código se condicao for verdadeira
+  } else {
+    // código se condicao for falsa
+  }
+
+2) if
+- Executa um bloco de código apenas se a condição for verdadeira.
+- Exemplo:
+  const idade = 18;
+  if (idade >= 18) {
+    console.log("Maior de idade");
+  }
+
+3) else
+- Executa um bloco alternativo se a condição do `if` for falsa.
+- Exemplo:
+  const idade = 15;
+  if (idade >= 18) {
+    console.log("Maior de idade");
+  } else {
+    console.log("Menor de idade");
+  }
+
+4) else if (equivalente ao "elif" em outras linguagens)
+- Permite testar múltiplas condições em sequência.
+- Exemplo:
+  const nota = 75;
+  if (nota >= 90) {
+    console.log("Excelente");
+  } else if (nota >= 70) {
+    console.log("Bom");
+  } else if (nota >= 50) {
+    console.log("Regular");
+  } else {
+    console.log("Insuficiente");
+  }
+
+5) Operadores de comparação
+- ==  → igual (com coerção de tipo)
+- === → estritamente igual (sem coerção de tipo, recomendado)
+- !=  → diferente (com coerção)
+- !== → estritamente diferente
+- >, <, >=, <= → maior, menor, maior ou igual, menor ou igual
+
+6) Operadores lógicos
+- && → "E" lógico (true se ambas condições forem verdadeiras)
+- || → "OU" lógico (true se pelo menos uma condição for verdadeira)
+- !  → negação (inverte o valor booleano)
+
+7) Aplicações práticas
+- Verificar permissões de usuário.
+- Classificar valores em categorias.
+- Controlar fluxo de execução em jogos, sistemas e algoritmos.
+
+Resumo:
+- `if` avalia uma condição.
+- `else` define alternativa quando a condição é falsa.
+- `else if` permite múltiplos testes sequenciais.
+- Operadores de comparação e lógicos tornam as condições mais poderosas e flexíveis.

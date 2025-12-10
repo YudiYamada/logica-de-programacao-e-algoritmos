@@ -1,0 +1,71 @@
+Resumo - Algoritmos Comuns: Problemas de Soma em JavaScript
+
+1) Soma de Subarrays
+- Definição: calcular a soma de elementos consecutivos em um array.
+- Exemplo simples:
+  const arr = [1, 2, 3, 4];
+  for (let i = 0; i < arr.length; i++) {
+    let soma = 0;
+    for (let j = i; j < arr.length; j++) {
+      soma += arr[j];
+      console.log(`Subarray [${i},${j}] soma = ${soma}`);
+    }
+  }
+  // Saída: todas as somas de subarrays possíveis
+
+- Uso comum: encontrar soma máxima de subarray.
+  // Algoritmo de Kadane (O(n)):
+  function maxSubarraySum(arr) {
+    let maxAtual = arr[0];
+    let maxGlobal = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      maxAtual = Math.max(arr[i], maxAtual + arr[i]);
+      if (maxAtual > maxGlobal) maxGlobal = maxAtual;
+    }
+    return maxGlobal;
+  }
+  console.log(maxSubarraySum([-2, 1, -3, 4, -1, 2, 1])); // 6 (subarray [4,-1,2,1])
+
+2) Pares que somam determinado valor (Two Sum)
+- Definição: verificar se existem dois elementos em um array cuja soma seja igual a um valor alvo.
+- Exemplo com loops aninhados (O(n²)):
+  function twoSumBruto(arr, alvo) {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] + arr[j] === alvo) {
+          return [i, j]; // retorna índices
+        }
+      }
+    }
+    return null;
+  }
+  console.log(twoSumBruto([2, 7, 11, 15], 9)); // [0, 1]
+
+- Exemplo otimizado com HashMap (O(n)):
+  function twoSum(arr, alvo) {
+    const mapa = new Map();
+    for (let i = 0; i < arr.length; i++) {
+      const complemento = alvo - arr[i];
+      if (mapa.has(complemento)) {
+        return [mapa.get(complemento), i];
+      }
+      mapa.set(arr[i], i);
+    }
+    return null;
+  }
+  console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+
+3) Casos especiais
+- Array vazio ou com 1 elemento → não há pares ou subarrays válidos.
+- Elementos negativos → podem influenciar soma máxima de subarray.
+- Pares repetidos → podem gerar múltiplas soluções, escolha conforme necessidade.
+
+4) Aplicações práticas
+- Subarrays: análise de séries temporais (ex: lucro máximo em dias consecutivos).
+- Pares com soma alvo: problemas de criptografia, algoritmos de busca, jogos.
+- Estatística: verificar combinações de valores que atingem metas.
+
+Resumo:
+- Problemas de soma envolvem calcular somas de subarrays ou encontrar pares que atingem um valor alvo.
+- Subarrays podem ser resolvidos com loops ou algoritmos eficientes como Kadane.
+- Pares podem ser resolvidos com loops aninhados ou otimização via HashMap.

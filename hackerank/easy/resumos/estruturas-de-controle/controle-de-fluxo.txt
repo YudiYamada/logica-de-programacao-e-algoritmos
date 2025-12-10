@@ -1,0 +1,53 @@
+Resumo - Estruturas de Controle: break e continue em JavaScript
+
+1) break
+- Função: interrompe imediatamente a execução de um laço (`for`, `while`, `do...while`).
+- Após o `break`, o programa continua a execução na primeira linha após o laço.
+- Exemplo:
+  for (let i = 0; i < 5; i++) {
+    if (i === 3) break;
+    console.log(i);
+  }
+  // Saída: 0, 1, 2 (o laço para quando i = 3)
+
+2) continue
+- Função: pula a iteração atual e continua para a próxima.
+- O laço não é interrompido, apenas ignora o restante do bloco naquela rodada.
+- Exemplo:
+  for (let i = 0; i < 5; i++) {
+    if (i === 2) continue;
+    console.log(i);
+  }
+  // Saída: 0, 1, 3, 4 (ignora o valor 2)
+
+3) Uso em while
+- break:
+  let x = 0;
+  while (true) {
+    if (x === 3) break;
+    console.log(x);
+    x++;
+  }
+  // Saída: 0, 1, 2
+
+- continue:
+  let y = 0;
+  while (y < 5) {
+    y++;
+    if (y === 2) continue;
+    console.log(y);
+  }
+  // Saída: 1, 3, 4, 5
+
+4) Aplicações práticas
+- break:
+  - Encerrar busca quando o elemento desejado é encontrado.
+  - Interromper loops infinitos quando condição é satisfeita.
+- continue:
+  - Ignorar valores que não atendem a uma condição.
+  - Pular elementos inválidos ou indesejados em listas.
+
+Resumo:
+- `break` encerra o laço imediatamente.
+- `continue` pula apenas a iteração atual e segue para a próxima.
+- Ambos são úteis para controlar o fluxo dentro de loops e tornar o código mais eficiente.
