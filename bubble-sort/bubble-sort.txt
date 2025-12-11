@@ -1,0 +1,67 @@
+📘 Bubble Sort e Notação Big O (JavaScript)
+
+------------------------------------------------------------
+🔍 O que é o Bubble Sort
+------------------------------------------------------------
+O Bubble Sort é um algoritmo de ordenação simples e didático.
+Ele percorre o array várias vezes, comparando elementos adjacentes
+e trocando-os quando estão fora de ordem. A cada passagem, o maior
+elemento "borbulha" para o final da lista.
+
+------------------------------------------------------------
+💻 Exemplo em JavaScript
+------------------------------------------------------------
+function bubbleSort(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n; i++) {                      // percorre o array várias vezes
+    for (let j = 0; j < n - i - 1; j++) {            // compara elementos adjacentes
+      if (arr[j] > arr[j + 1]) {                     // se estão fora de ordem
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // troca usando destructuring
+      }
+    }
+  }
+  return arr;
+}
+
+console.log(bubbleSort([5, 1, 4, 2, 8]));
+// saída: [1, 2, 4, 5, 8]
+
+------------------------------------------------------------
+⏱️ Complexidade
+------------------------------------------------------------
+- Melhor caso: O(n) → quando o array já está ordenado.
+- Caso médio: O(n²).
+- Pior caso: O(n²) → array em ordem inversa.
+- Espaço extra: O(1), pois é in-place.
+
+------------------------------------------------------------
+⚙️ Melhor, Pior e Caso Médio
+------------------------------------------------------------
+Melhor caso: O(n)
+Pior caso:   O(n²)
+Caso médio:  O(n²)
+
+------------------------------------------------------------
+🧩 Como Reconhecer um Algoritmo O(n²)
+------------------------------------------------------------
+- Possui loops aninhados (for dentro de for).
+- Cada elemento é comparado com vários outros.
+- Número de operações cresce proporcionalmente a n².
+
+------------------------------------------------------------
+⚖️ Comparação com Outros Algoritmos
+------------------------------------------------------------
+O(1)       → acesso direto em array
+O(log n)   → busca binária
+O(n)       → busca linear
+O(n log n) → merge sort, quick sort
+O(n²)      → bubble sort
+
+------------------------------------------------------------
+🧩 Resumo Final
+------------------------------------------------------------
+Algoritmo: Ordena comparando e trocando elementos adjacentes.
+Complexidade: O(n²) no pior/médio caso; O(n) no melhor caso.
+Espaço extra: O(1).
+Resposta curta: "O Bubble Sort é O(n²), pois compara e troca
+elementos adjacentes várias vezes."
