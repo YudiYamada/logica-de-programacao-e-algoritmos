@@ -1,0 +1,54 @@
+Resumo - Raciocínio Lógico e Padrões: Problemas de Contagem em JavaScript
+
+1) Definição
+- Problemas de contagem envolvem determinar quantos elementos em uma coleção (array, string, conjunto) satisfazem uma condição específica.
+- Exemplo: contar quantos números são pares em uma lista.
+
+2) Contagem em Arrays
+- Usando loop:
+  const numeros = [1, 2, 3, 4, 5, 6];
+  let count = 0;
+  for (let n of numeros) {
+    if (n % 2 === 0) count++;
+  }
+  console.log(count); // 3 (pares: 2, 4, 6)
+
+- Usando filter():
+  const pares = numeros.filter(n => n % 2 === 0).length;
+  console.log(pares); // 3
+
+3) Contagem em Strings
+- Exemplo: contar vogais em uma palavra.
+  const palavra = "banana";
+  let count = 0;
+  for (let letra of palavra) {
+    if ("aeiou".includes(letra)) count++;
+  }
+  console.log(count); // 3 (vogais: a, a, a)
+
+4) Contagem com condições complexas
+- Exemplo: contar números maiores que 10.
+  const lista = [5, 12, 18, 7, 3];
+  const maioresQue10 = lista.filter(n => n > 10).length;
+  console.log(maioresQue10); // 2 (12 e 18)
+
+- Exemplo: contar palavras com mais de 4 letras.
+  const palavras = ["sol", "lua", "estrela", "planeta"];
+  const longas = palavras.filter(p => p.length > 4).length;
+  console.log(longas); // 2 ("estrela", "planeta")
+
+5) Casos especiais
+- Lista ou string vazia → resultado sempre 0.
+- Condições devem ser bem definidas para evitar ambiguidades.
+- Sensibilidade a maiúsculas/minúsculas em strings pode afetar contagem.
+
+6) Aplicações práticas
+- Contar elementos válidos em listas de dados.
+- Verificar quantos usuários atendem a critérios (ex: idade > 18).
+- Analisar frequência de caracteres ou palavras em textos.
+- Resolver problemas de lógica e estatística.
+
+Resumo:
+- Problemas de contagem verificam quantos elementos satisfazem uma condição.
+- Podem ser resolvidos com loops ou métodos como filter().
+- São úteis em análise de dados, estatística e exercícios de lógica.

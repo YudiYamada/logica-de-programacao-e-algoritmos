@@ -1,0 +1,52 @@
+Resumo - Entrada e Saída: Leitura de Dados em JavaScript
+
+1) Definição
+- Entrada de dados significa capturar informações fornecidas pelo usuário ou por fontes externas (teclado, arquivos, APIs).
+- Em JavaScript, a leitura depende do ambiente (navegador ou Node.js).
+
+2) Navegador (Browser)
+- Uso comum: `prompt()` para entrada simples.
+  const nome = prompt("Digite seu nome:");
+  console.log("Olá, " + nome);
+- Limitação: apenas para testes e aplicações simples, não recomendado em sistemas complexos.
+
+3) Node.js (Ambiente de servidor)
+- Usando `readline`:
+  const readline = require("readline");
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  rl.question("Digite um número: ", (resposta) => {
+    console.log("Você digitou:", resposta);
+    rl.close();
+  });
+
+- Usando `process.stdin` diretamente:
+  process.stdin.on("data", (data) => {
+    console.log("Entrada recebida:", data.toString());
+  });
+
+4) Leitura de arquivos
+- Usando módulo `fs` (File System):
+  const fs = require("fs");
+  const conteudo = fs.readFileSync("arquivo.txt", "utf8");
+  console.log(conteudo);
+
+5) Casos especiais
+- Entrada inválida → pode precisar de validação (ex: número em vez de texto).
+- Entrada assíncrona → leitura pode depender de eventos ou callbacks.
+- Strings lidas de arquivos ou teclado podem precisar de conversão (`parseInt`, `parseFloat`).
+
+6) Aplicações práticas
+- Capturar dados de usuários em sistemas interativos.
+- Ler arquivos de configuração ou dados externos.
+- Processar informações em tempo real (ex: logs, streams).
+- Criar programas que dependem de entrada dinâmica.
+
+Resumo:
+- Leitura de dados em JS varia conforme o ambiente (browser ou Node.js).
+- Navegador: `prompt()` para entrada básica.
+- Node.js: `readline` ou `process.stdin` para entrada no console.
+- Arquivos: módulo `fs` para leitura de conteúdo.

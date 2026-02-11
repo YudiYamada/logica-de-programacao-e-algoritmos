@@ -1,0 +1,53 @@
+Resumo - Fatoriais e Combinações Simples em JavaScript
+
+1) Fatorial (n!)
+- Definição: produto de todos os inteiros positivos de 1 até n.
+- Fórmula: n! = n × (n-1) × (n-2) × ... × 1
+- Exemplos:
+  5! = 5 × 4 × 3 × 2 × 1 = 120
+  0! = 1 (por definição matemática)
+
+- Implementação em JavaScript:
+  function fatorial(n) {
+    if (n === 0 || n === 1) return 1;
+    let resultado = 1;
+    for (let i = 2; i <= n; i++) {
+      resultado *= i;
+    }
+    return resultado;
+  }
+
+2) Combinações Simples (C(n, k))
+- Definição: número de maneiras de escolher k elementos de um conjunto de n elementos, sem importar a ordem.
+- Fórmula: C(n, k) = n! / (k! × (n - k)!)
+- Exemplos:
+  C(5, 2) = 5! / (2! × 3!) = 10
+  C(6, 3) = 6! / (3! × 3!) = 20
+
+- Implementação em JavaScript:
+  function combinacao(n, k) {
+    function fatorial(x) {
+      if (x === 0 || x === 1) return 1;
+      let resultado = 1;
+      for (let i = 2; i <= x; i++) {
+        resultado *= i;
+      }
+      return resultado;
+    }
+    return fatorial(n) / (fatorial(k) * fatorial(n - k));
+  }
+
+3) Casos especiais
+- Fatorial de número negativo não é definido.
+- C(n, 0) = 1 (escolher nenhum elemento).
+- C(n, n) = 1 (escolher todos os elementos).
+- C(n, k) = 0 se k > n.
+
+4) Aplicações práticas
+- Fatorial: usado em permutações e cálculos de probabilidade.
+- Combinações: usado em estatística, análise combinatória e problemas de escolha sem repetição.
+
+Resumo:
+- Fatorial calcula o produto sequencial de números inteiros positivos.
+- Combinações simples determinam quantas formas existem de escolher elementos sem considerar ordem.
+- Em JavaScript, podem ser implementados com loops e funções auxiliares.

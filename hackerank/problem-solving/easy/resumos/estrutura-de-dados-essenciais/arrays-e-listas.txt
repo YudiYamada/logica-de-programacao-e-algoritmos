@@ -1,0 +1,54 @@
+Resumo - Arrays / Listas em JavaScript
+
+1) Definição
+- Arrays são estruturas de dados que armazenam múltiplos valores em uma única variável.
+- Cada valor ocupa uma posição (índice) dentro do array.
+- Exemplo:
+  const numeros = [10, 20, 30, 40];
+
+2) Acesso por índice
+- Índices começam em 0.
+- Exemplo:
+  numeros[0] // 10 (primeiro elemento)
+  numeros[2] // 30 (terceiro elemento)
+- Alterar valor:
+  numeros[1] = 25; // agora o array é [10, 25, 30, 40]
+
+3) Iteração de elementos
+- For tradicional:
+  for (let i = 0; i < numeros.length; i++) {
+    console.log(numeros[i]);
+  }
+- For...of:
+  for (let valor of numeros) {
+    console.log(valor);
+  }
+- forEach():
+  numeros.forEach((valor, indice) => {
+    console.log(indice, valor);
+  });
+
+4) Manipulação de elementos
+- Adicionar:
+  numeros.push(50);   // adiciona ao final → [10, 25, 30, 40, 50]
+  numeros.unshift(5); // adiciona ao início → [5, 10, 25, 30, 40, 50]
+- Remover:
+  numeros.pop();      // remove último → [5, 10, 25, 30, 40]
+  numeros.shift();    // remove primeiro → [10, 25, 30, 40]
+- Remover ou substituir em posição específica:
+  numeros.splice(1, 2); // remove 2 elementos a partir do índice 1 → [10, 40]
+  numeros.splice(1, 1, 99); // substitui elemento no índice 1 → [10, 99, 40]
+- Copiar parte:
+  const subArray = numeros.slice(0, 2); // copia do índice 0 até 1
+
+5) Métodos úteis
+- numeros.includes(30) // true (verifica se existe)
+- numeros.indexOf(40)  // retorna índice (2)
+- numeros.concat([60, 70]) // junta arrays
+- numeros.join(', ')   // "10, 99, 40" (transforma em string)
+
+Resumo:
+- Arrays permitem armazenar e acessar valores por índice.
+- Iteração pode ser feita com loops ou métodos nativos.
+- Manipulação inclui adicionar, remover, substituir e copiar elementos.
+- São fundamentais para organizar e processar coleções de dados.

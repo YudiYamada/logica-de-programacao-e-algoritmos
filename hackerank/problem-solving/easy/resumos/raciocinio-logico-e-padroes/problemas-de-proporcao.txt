@@ -1,0 +1,46 @@
+Resumo - Raciocínio Lógico e Padrões: Problemas de Proporção em JavaScript
+
+1) Definição
+- Problemas de proporção envolvem comparar partes de um todo, geralmente usando frações ou porcentagens.
+- Exemplo: "3 de cada 5 alunos gostam de matemática" → fração 3/5 → 60%.
+
+2) Frações
+- Representam a relação entre numerador (parte) e denominador (todo).
+- Exemplo:
+  const parte = 3;
+  const todo = 5;
+  const fracao = parte / todo; // 0.6
+- Interpretação: 3/5 = 0.6 (equivale a 60%).
+
+3) Porcentagens
+- Porcentagem é uma fração com denominador 100.
+- Conversão:
+  const proporcao = 0.6;
+  const porcentagem = proporcao * 100; // 60
+- Exemplo: 60% dos alunos gostam de matemática.
+
+4) Cálculo prático
+- Encontrar porcentagem de um valor:
+  const valor = 200;
+  const porcentagem = 20;
+  const resultado = (valor * porcentagem) / 100; // 40
+- Encontrar fração equivalente:
+  const parte = 40;
+  const todo = 200;
+  const fracao = parte / todo; // 0.2 → 20%
+
+5) Casos especiais
+- Denominador zero → fração indefinida.
+- Porcentagens podem ser maiores que 100% (quando parte > todo).
+- Frações podem ser simplificadas para melhor interpretação (ex: 4/8 → 1/2).
+
+6) Aplicações práticas
+- Estatística: proporção de elementos em uma amostra.
+- Finanças: cálculo de descontos, juros e lucros.
+- Probabilidade: chances de eventos (ex: 1/6 em um dado).
+- Análise de dados: porcentagem de participação ou crescimento.
+
+Resumo:
+- Frações e porcentagens expressam relações proporcionais.
+- Frações são parte/todo, porcentagens são frações em base 100.
+- Usadas em estatística, finanças, probabilidade e análise de dados.

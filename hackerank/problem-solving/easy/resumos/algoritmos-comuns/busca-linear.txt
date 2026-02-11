@@ -1,0 +1,56 @@
+Resumo - Algoritmos Comuns: Busca Linear em JavaScript
+
+1) Definição
+- A busca linear (ou sequencial) percorre uma lista elemento por elemento até encontrar o valor desejado ou até o fim da lista.
+- É o algoritmo mais simples de busca, mas também o menos eficiente em listas grandes (complexidade O(n)).
+
+2) Funcionamento
+- Inicia no primeiro elemento.
+- Compara cada elemento com o valor procurado.
+- Se encontrar, retorna a posição ou o valor.
+- Se não encontrar, retorna indicação de ausência (ex: -1 ou null).
+
+3) Implementação básica
+- Exemplo em JavaScript:
+  function buscaLinear(lista, alvo) {
+    for (let i = 0; i < lista.length; i++) {
+      if (lista[i] === alvo) {
+        return i; // retorna índice do elemento encontrado
+      }
+    }
+    return -1; // não encontrado
+  }
+
+  const numeros = [10, 20, 30, 40];
+  console.log(buscaLinear(numeros, 30)); // 2
+  console.log(buscaLinear(numeros, 50)); // -1
+
+4) Variações
+- Buscar múltiplas ocorrências:
+  function buscaTodas(lista, alvo) {
+    const indices = [];
+    for (let i = 0; i < lista.length; i++) {
+      if (lista[i] === alvo) {
+        indices.push(i);
+      }
+    }
+    return indices;
+  }
+- Buscar em strings:
+  const texto = "banana";
+  const posicao = texto.indexOf("na"); // 2 (primeira ocorrência)
+
+5) Casos especiais
+- Lista vazia → retorna -1 imediatamente.
+- Elemento inexistente → percorre toda a lista e retorna -1.
+- Elementos repetidos → retorna o índice da primeira ocorrência (na versão básica).
+
+6) Aplicações práticas
+- Verificar se um valor existe em uma lista pequena.
+- Procurar palavras em textos curtos.
+- Usar em situações onde não há necessidade de otimização.
+
+Resumo:
+- A busca linear é simples e direta, mas pouco eficiente em grandes listas.
+- Ideal para listas pequenas ou quando não há estrutura ordenada.
+- Pode ser adaptada para retornar todas as ocorrências ou trabalhar com strings.

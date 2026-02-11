@@ -1,0 +1,49 @@
+Resumo - Algoritmos Comuns: Contagem de Ocorrências em JavaScript
+
+1) Definição
+- Contagem de ocorrências significa calcular quantas vezes um elemento aparece em uma coleção (array, string, etc.).
+- Muito usado para frequência de números, letras ou palavras.
+
+2) Frequência de números em arrays
+- Exemplo:
+  const numeros = [1, 2, 2, 3, 4, 4, 4];
+  const freq = {};
+  for (let n of numeros) {
+    freq[n] = (freq[n] || 0) + 1;
+  }
+  console.log(freq); // { '1': 1, '2': 2, '3': 1, '4': 3 }
+
+3) Frequência de letras em strings
+- Exemplo:
+  const palavra = "banana";
+  const freq = {};
+  for (let letra of palavra) {
+    freq[letra] = (freq[letra] || 0) + 1;
+  }
+  console.log(freq); // { b: 1, a: 3, n: 2 }
+
+4) Usando Map para maior flexibilidade
+- Exemplo:
+  const lista = ["a", "b", "a", "c", "b", "a"];
+  const freqMap = new Map();
+  for (let item of lista) {
+    freqMap.set(item, (freqMap.get(item) || 0) + 1);
+  }
+  console.log(freqMap); // Map { 'a' => 3, 'b' => 2, 'c' => 1 }
+
+5) Casos especiais
+- Lista ou string vazia → retorna objeto/mapa vazio.
+- Elementos diferentes em tipos (ex: "2" e 2) → tratados como distintos.
+- Sensibilidade a maiúsculas/minúsculas em strings:
+  "A" ≠ "a" (podemos normalizar com `.toLowerCase()`).
+
+6) Aplicações práticas
+- Contar frequência de letras para verificar palíndromos ou anagramas.
+- Contar frequência de números em estatísticas.
+- Analisar palavras em textos (ex: contagem de palavras mais usadas).
+- Criar histogramas ou distribuições de frequência.
+
+Resumo:
+- A contagem de ocorrências é feita com objetos ou Map.
+- Útil para analisar dados, textos e listas.
+- Atenção a tipos e maiúsculas/minúsculas para evitar resultados inesperados.

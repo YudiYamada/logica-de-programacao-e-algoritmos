@@ -1,0 +1,44 @@
+Resumo - Raciocínio Lógico e Padrões: Problemas de Intervalo em JavaScript
+
+1) Definição
+- Problemas de intervalo verificam se valores estão dentro de limites estabelecidos (mínimo e máximo).
+- Exemplo: verificar se uma nota está entre 0 e 100.
+
+2) Verificação simples
+- Usando operadores de comparação:
+  const valor = 75;
+  if (valor >= 0 && valor <= 100) {
+    console.log("Valor dentro do intervalo");
+  } else {
+    console.log("Valor fora do intervalo");
+  }
+
+3) Contagem de valores dentro de intervalo
+- Exemplo: contar quantos números estão entre 10 e 20.
+  const numeros = [5, 12, 18, 25, 19];
+  const dentro = numeros.filter(n => n >= 10 && n <= 20).length;
+  console.log(dentro); // 3 (12, 18, 19)
+
+4) Extração de valores dentro de intervalo
+- Exemplo: obter todos os elementos válidos.
+  const lista = [2, 8, 15, 22, 30];
+  const intervalo = lista.filter(n => n >= 10 && n <= 20);
+  console.log(intervalo); // [15]
+
+5) Casos especiais
+- Intervalos abertos ou fechados:
+  - Fechado: [a, b] → inclui limites (>= a && <= b).
+  - Aberto: (a, b) → exclui limites (> a && < b).
+- Lista vazia → resultado sempre vazio ou contagem 0.
+- Valores negativos ou decimais → também podem ser tratados com as mesmas comparações.
+
+6) Aplicações práticas
+- Validar notas, idades ou medidas dentro de limites aceitáveis.
+- Filtrar dados em análises estatísticas.
+- Verificar se coordenadas ou valores estão em faixas específicas.
+- Problemas de lógica em programação competitiva.
+
+Resumo:
+- Problemas de intervalo verificam se valores estão entre limites definidos.
+- Podem ser usados para validação, filtragem e análise de dados.
+- Implementados com operadores de comparação e métodos como filter().

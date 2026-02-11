@@ -1,0 +1,53 @@
+Resumo - Entrada e Saída: Conversão de Tipos em JavaScript
+
+1) Definição
+- Conversão de tipos (type casting) é transformar um valor de um tipo em outro.
+- Comum em entrada e saída de dados, já que valores lidos geralmente chegam como **string**.
+
+2) String → Inteiro
+- Usando `parseInt()`:
+  const str = "123";
+  const num = parseInt(str);
+  console.log(num); // 123 (tipo number)
+
+- Usando `Number()`:
+  const str = "456";
+  const num = Number(str);
+  console.log(num); // 456
+
+- Observações:
+  - `parseInt("123abc")` → 123 (para na primeira parte não numérica).
+  - `Number("123abc")` → NaN (não é número válido).
+  - Para decimais: usar `parseFloat("12.34")`.
+
+3) Inteiro → String
+- Usando `toString()`:
+  const num = 789;
+  const str = num.toString();
+  console.log(str); // "789"
+
+- Usando `String()`:
+  const num = 101;
+  const str = String(num);
+  console.log(str); // "101"
+
+4) Casos especiais
+- Valores inválidos:
+  - `parseInt("abc")` → NaN.
+  - `Number("")` → 0.
+- Conversão de booleanos:
+  - `String(true)` → "true".
+  - `Number(false)` → 0.
+- Conversão de null/undefined:
+  - `String(null)` → "null".
+  - `Number(undefined)` → NaN.
+
+5) Aplicações práticas
+- Ler dados do usuário (strings) e convertê-los para números para cálculos.
+- Converter números para strings ao exibir resultados formatados.
+- Garantir consistência em operações matemáticas e de concatenação.
+
+Resumo:
+- String → Inteiro: `parseInt()`, `Number()`, `parseFloat()`.
+- Inteiro → String: `toString()`, `String()`.
+- Conversão de tipos é essencial para manipulação correta de dados em entrada e saída.

@@ -1,0 +1,58 @@
+Resumo - Dicionários / Mapas (HashMap) em JavaScript
+
+1) Definição
+- Em JavaScript, a estrutura mais próxima de um "dicionário" ou "HashMap" é o **Objeto** (`{}`) ou a classe **Map**.
+- Ambos permitem armazenar pares **chave-valor**.
+
+2) Associação chave-valor
+- Usando Objeto:
+  const aluno = {
+    nome: "Ana",
+    idade: 20,
+    curso: "Engenharia"
+  };
+  console.log(aluno.nome);   // "Ana"
+  console.log(aluno["idade"]); // 20
+- Usando Map:
+  const mapa = new Map();
+  mapa.set("nome", "Ana");
+  mapa.set("idade", 20);
+  console.log(mapa.get("nome")); // "Ana"
+  console.log(mapa.has("curso")); // false
+
+3) Contagem de frequência
+- Exemplo: contar frequência de letras em uma palavra.
+  const palavra = "banana";
+  const freq = {};
+  for (let letra of palavra) {
+    freq[letra] = (freq[letra] || 0) + 1;
+  }
+  console.log(freq); // { b: 1, a: 3, n: 2 }
+
+- Usando Map:
+  const palavra = "banana";
+  const freqMap = new Map();
+  for (let letra of palavra) {
+    freqMap.set(letra, (freqMap.get(letra) || 0) + 1);
+  }
+  console.log(freqMap); // Map { 'b' => 1, 'a' => 3, 'n' => 2 }
+
+4) Diferenças entre Objeto e Map
+- Objeto:
+  - Chaves geralmente são strings ou símbolos.
+  - Mais simples e direto para uso básico.
+- Map:
+  - Aceita qualquer tipo de chave (string, número, objeto, função).
+  - Mantém a ordem de inserção.
+  - Métodos úteis: set(), get(), has(), delete(), size.
+
+5) Aplicações práticas
+- Contagem de frequência de elementos (palavras, números, caracteres).
+- Armazenar configurações ou propriedades de objetos.
+- Criar tabelas de lookup (ex: códigos → descrições).
+- Mapear relacionamentos (ex: usuário → lista de permissões).
+
+Resumo:
+- Dicionários/Mapas permitem associar chaves a valores.
+- São ideais para contagem de frequência e buscas rápidas.
+- Em JS, podem ser implementados com Objetos ou com Map, dependendo da necessidade.

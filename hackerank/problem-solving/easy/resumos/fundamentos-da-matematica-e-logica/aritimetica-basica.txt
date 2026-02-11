@@ -1,0 +1,92 @@
+Resumo - Aritmética Básica em JavaScript
+
+1) Soma (+)
+- Descrição: Adiciona valores. Em JS, + também concatena strings.
+- Exemplos:
+  5 + 3            // 8
+  '2' + 3          // '23' (concatenação)
+  Number('2') + 3  // 5 (conversão explícita)
+- Atribuição composta:
+  let x = 1; x += 4;  // x = 5
+
+2) Subtração (-)
+- Descrição: Calcula a diferença. Converte strings numéricas para número automaticamente.
+- Exemplos:
+  10 - 4           // 6
+  '10' - 4         // 6 (coerção para número)
+  'a' - 1          // NaN
+- Atribuição composta:
+  let x = 5; x -= 2;  // x = 3
+
+3) Multiplicação (*)
+- Descrição: Produto de valores.
+- Exemplos:
+  7 * 2            // 14
+  '3' * 2          // 6 (coerção para número)
+  2.5 * 4          // 10
+- Atribuição composta:
+  let x = 3; x *= 3;  // x = 9
+
+4) Divisão (/)
+- Descrição: Quociente de valores (resultado em ponto flutuante).
+- Exemplos:
+  20 / 5           // 4
+  7 / 2            // 3.5
+  Math.floor(7 / 2) // 3 (divisão inteira aproximada, truncando)
+- Casos especiais:
+  1 / 0            // Infinity
+  -1 / 0           // -Infinity
+  0 / 0            // NaN
+- Atribuição composta:
+  let x = 8; x /= 2;  // x = 4
+
+5) Módulo (%)
+- Descrição: Resto da divisão inteira. Em JS, o sinal do resultado segue o do dividendo.
+- Exemplos:
+  17 % 5           // 2
+  -17 % 5          // -2
+  17 % -5          // 2
+- Normalizar resto positivo (útil para índices circulares):
+  const mod = ((a % n) + n) % n;
+
+6) Incremento e decremento (++ / --)
+- Prefixo vs. pós-fixo:
+  let x = 1;
+  ++x   // x vira 2 e a expressão vale 2
+  x++   // x vira 2, mas a expressão vale 1 (valor antes do incremento)
+
+7) Precedência e parênteses
+- Precedência comum: * e / > + e -
+- Use parênteses para tornar a intenção clara:
+  (a + b) * c
+
+8) Conversão de tipos
+- Conversão explícita:
+  Number('2')      // 2
+  parseInt('08', 10) // 8
+  parseFloat('2.5')  // 2.5
+- Atenção:
+  '2' + 3          // '23' (concatenação)
+  Number('a')      // NaN
+  isNaN(Number('a')) // true
+
+9) Ponto flutuante
+- Erros de precisão:
+  0.1 + 0.2        // 0.30000000000000004
+- Comparação com tolerância:
+  const eps = Number.EPSILON;
+  const isEqual = Math.abs((0.1 + 0.2) - 0.3) < eps;
+
+10) BigInt
+- Inteiros grandes:
+  const a = 9007199254740991n; // BigInt
+  const b = a + 1n             // 9007199254740992n
+- Não misturar Number e BigInt:
+  1n + 1   // TypeError
+- Math.* não funciona com BigInt.
+
+11) Boas práticas
+- Prefira conversões explícitas (Number, parseInt, parseFloat) antes de operar.
+- Use parênteses para controlar precedência em expressões complexas.
+- Para divisão inteira, use Math.floor, Math.trunc ou normalização com módulo quando necessário.
+- Trate casos especiais de Infinity e NaN com verificações (isFinite, Number.isNaN).

@@ -1,0 +1,76 @@
+Resumo - Estruturas de Controle: Laços de Repetição em JavaScript
+
+1) Laço for
+- Usado quando sabemos o número exato de repetições.
+- Sintaxe:
+  for (inicialização; condição; incremento) {
+    // código a ser repetido
+  }
+- Exemplo:
+  for (let i = 0; i < 5; i++) {
+    console.log("Iteração:", i);
+  }
+  // Saída: Iteração: 0 até Iteração: 4
+
+- Variações:
+  - for...of → percorre valores de arrays ou strings.
+    const numeros = [10, 20, 30];
+    for (let n of numeros) {
+      console.log(n);
+    }
+  - for...in → percorre índices ou propriedades de objetos.
+    const pessoa = { nome: "Ana", idade: 20 };
+    for (let chave in pessoa) {
+      console.log(chave, pessoa[chave]);
+    }
+
+2) Laço while
+- Usado quando não sabemos o número exato de repetições, mas temos uma condição de parada.
+- Sintaxe:
+  while (condicao) {
+    // código a ser repetido
+  }
+- Exemplo:
+  let contador = 0;
+  while (contador < 3) {
+    console.log("Contador:", contador);
+    contador++;
+  }
+  // Saída: Contador: 0 até Contador: 2
+
+3) Laço do...while
+- Executa o bloco pelo menos uma vez, mesmo que a condição seja falsa.
+- Sintaxe:
+  do {
+    // código
+  } while (condicao);
+- Exemplo:
+  let x = 5;
+  do {
+    console.log("Valor de x:", x);
+    x++;
+  } while (x < 5);
+  // Saída: "Valor de x: 5" (executa uma vez)
+
+4) Controle de fluxo dentro dos laços
+- break → interrompe o laço imediatamente.
+- continue → pula para a próxima iteração.
+- Exemplo:
+  for (let i = 0; i < 5; i++) {
+    if (i === 2) continue; // pula o valor 2
+    if (i === 4) break;    // interrompe no valor 4
+    console.log(i);
+  }
+  // Saída: 0, 1, 3
+
+5) Aplicações práticas
+- Percorrer arrays e coleções de dados.
+- Executar cálculos repetitivos (somatórios, médias).
+- Simular processos até que uma condição seja satisfeita.
+- Criar loops infinitos controlados por break (ex: leitura contínua até entrada válida).
+
+Resumo:
+- `for` é ideal para repetições com número conhecido de iterações.
+- `while` é usado quando a repetição depende de uma condição.
+- `do...while` garante execução mínima de uma vez.
+- `break` e `continue` controlam o fluxo dentro dos laços.

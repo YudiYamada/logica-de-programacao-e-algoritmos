@@ -1,0 +1,57 @@
+Resumo - Algoritmos Comuns: Comparação de Pares em JavaScript
+
+1) Definição
+- Comparação de pares consiste em analisar dois elementos de uma lista (array) de cada vez.
+- Usado para calcular diferenças, somas ou verificar relações entre elementos.
+
+2) Diferenças entre elementos
+- Exemplo: calcular todas as diferenças possíveis entre pares.
+  const numeros = [5, 8, 12];
+  const diferencas = [];
+  for (let i = 0; i < numeros.length; i++) {
+    for (let j = i + 1; j < numeros.length; j++) {
+      diferencas.push(Math.abs(numeros[i] - numeros[j]));
+    }
+  }
+  console.log(diferencas); // [3, 7, 4]
+
+- Uso comum: encontrar a menor diferença entre elementos.
+  const menorDif = Math.min(...diferencas); // 3
+
+3) Somas entre elementos
+- Exemplo: calcular todas as somas possíveis entre pares.
+  const numeros = [2, 4, 6];
+  const somas = [];
+  for (let i = 0; i < numeros.length; i++) {
+    for (let j = i + 1; j < numeros.length; j++) {
+      somas.push(numeros[i] + numeros[j]);
+    }
+  }
+  console.log(somas); // [6, 8, 10]
+
+- Uso comum: verificar se existe par que soma determinado valor.
+  function existeParComSoma(lista, alvo) {
+    for (let i = 0; i < lista.length; i++) {
+      for (let j = i + 1; j < lista.length; j++) {
+        if (lista[i] + lista[j] === alvo) return true;
+      }
+    }
+    return false;
+  }
+  console.log(existeParComSoma([1, 2, 3, 4], 5)); // true (2+3)
+
+4) Casos especiais
+- Arrays vazios ou com apenas 1 elemento → não há pares para comparar.
+- Elementos repetidos → podem gerar diferenças iguais ou somas duplicadas.
+- Complexidade: O(n²), pois compara todos os pares possíveis.
+
+5) Aplicações práticas
+- Encontrar pares de números que somam um valor específico (ex: problema do "two sum").
+- Calcular distâncias entre valores em listas.
+- Analisar combinações de elementos em estatísticas ou jogos.
+- Determinar limites (diferença mínima/máxima) em conjuntos de dados.
+
+Resumo:
+- Comparação de pares envolve somar ou subtrair elementos em duplas.
+- Útil para problemas de busca de soma alvo, análise de diferenças e estatísticas.
+- Implementado com loops aninhados, geralmente com complexidade O(n²).

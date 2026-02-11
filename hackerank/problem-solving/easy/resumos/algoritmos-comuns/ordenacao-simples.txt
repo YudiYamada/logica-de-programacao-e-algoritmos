@@ -1,0 +1,56 @@
+Resumo - Algoritmos Comuns: Ordenação Simples em JavaScript
+
+1) Bubble Sort
+- Definição: algoritmo de ordenação simples que compara pares de elementos adjacentes e os troca de posição se estiverem fora de ordem.
+- Funcionamento:
+  - Percorre a lista várias vezes.
+  - A cada passagem, o maior elemento "borbulha" para o final.
+- Complexidade:
+  - O(n²) no pior caso (lista grande → pouco eficiente).
+- Implementação:
+  function bubbleSort(arr) {
+    let n = arr.length;
+    for (let i = 0; i < n - 1; i++) {
+      for (let j = 0; j < n - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          // troca
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        }
+      }
+    }
+    return arr;
+  }
+
+  console.log(bubbleSort([5, 3, 8, 4, 2])); // [2, 3, 4, 5, 8]
+
+2) Sort nativo da linguagem
+- JavaScript possui o método `.sort()` para arrays.
+- Por padrão, `.sort()` ordena elementos como strings (ordem lexicográfica).
+- Exemplo:
+  const arr = [10, 2, 5, 1];
+  console.log(arr.sort()); // [1, 10, 2, 5] (ordenação como string)
+
+- Para ordenar numericamente:
+  const arrNum = [10, 2, 5, 1];
+  arrNum.sort((a, b) => a - b);
+  console.log(arrNum); // [1, 2, 5, 10]
+
+- Para ordem decrescente:
+  arrNum.sort((a, b) => b - a);
+
+3) Comparação entre Bubble Sort e sort()
+- Bubble Sort:
+  - Didático, bom para aprender lógica de ordenação.
+  - Ineficiente em listas grandes.
+- sort() nativo:
+  - Muito mais eficiente (implementado internamente com algoritmos otimizados, geralmente QuickSort ou TimSort).
+  - Deve ser usado na prática.
+
+4) Aplicações práticas
+- Bubble Sort: ensino de algoritmos, exercícios de lógica.
+- sort() nativo: ordenação de listas de números, strings, objetos (ex: ordenar produtos por preço).
+
+Resumo:
+- Bubble Sort é simples, mas pouco eficiente.
+- O método `.sort()` é nativo do JavaScript e deve ser usado em aplicações reais.
+- Para números, sempre fornecer função de comparação `(a, b) => a - b`.

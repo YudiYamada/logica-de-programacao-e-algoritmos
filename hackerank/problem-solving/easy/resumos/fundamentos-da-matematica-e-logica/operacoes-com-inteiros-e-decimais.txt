@@ -1,0 +1,62 @@
+Resumo - Operações com Inteiros e Decimais em JavaScript
+
+1) Inteiros (Number)
+- Em JavaScript, todos os números (inteiros e decimais) pertencem ao tipo Number.
+- Exemplos:
+  let a = 10;      // inteiro
+  let b = -5;      // inteiro negativo
+- Operações:
+  a + b            // 5
+  a - b            // 15
+  a * 2            // 20
+  a / 2            // 5
+
+2) Decimais (Ponto flutuante)
+- Representados também pelo tipo Number.
+- Exemplos:
+  let x = 3.14;    // decimal
+  let y = 0.1 + 0.2; // 0.30000000000000004 (erro de precisão)
+- Operações:
+  x * 2            // 6.28
+  x / 2            // 1.57
+- Atenção: operações com decimais podem gerar imprecisão.
+
+3) Conversão entre inteiros e decimais
+- Math.floor(3.9)   // 3 (arredonda para baixo)
+- Math.ceil(3.1)    // 4 (arredonda para cima)
+- Math.round(3.5)   // 4 (arredonda para o inteiro mais próximo)
+- Math.trunc(3.9)   // 3 (remove parte decimal)
+
+4) Precisão e comparação
+- Problema comum:
+  0.1 + 0.2 === 0.3   // false
+- Solução com tolerância:
+  const eps = Number.EPSILON;
+  Math.abs((0.1 + 0.2) - 0.3) < eps; // true
+
+5) Operações mistas
+- Inteiros e decimais podem ser combinados:
+  5 + 2.5          // 7.5
+  10 / 4           // 2.5
+- Resultado sempre será Number (ponto flutuante).
+
+6) BigInt (para inteiros muito grandes)
+- Usado para representar inteiros além do limite seguro.
+- Exemplos:
+  const big = 123456789012345678901234567890n;
+  big + 10n        // válido
+- Não pode misturar Number e BigInt:
+  big + 10         // TypeError
+
+7) Funções úteis
+- Math.pow(2, 3)   // 8 (potência)
+- Math.sqrt(16)    // 4 (raiz quadrada)
+- Math.abs(-7)     // 7 (valor absoluto)
+- Math.max(1, 5, 3) // 5 (máximo)
+- Math.min(1, 5, 3) // 1 (mínimo)
+
+Resumo:
+- Inteiros e decimais em JS são do tipo Number.
+- Operações básicas funcionam da mesma forma para ambos.
+- Decimais podem gerar erros de precisão, use EPSILON para comparar.
+- Para inteiros muito grandes, utilize BigInt.

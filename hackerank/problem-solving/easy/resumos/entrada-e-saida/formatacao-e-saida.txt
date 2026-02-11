@@ -1,0 +1,76 @@
+Resumo - Entrada e Saída: Formatação de Saída em JavaScript
+
+1) Definição
+- Formatação de saída é organizar como os resultados são exibidos, seja em linhas, colunas ou tabelas.
+- Importante para tornar os dados mais legíveis e estruturados.
+
+2) Impressão em linhas
+- Usando `console.log()` para cada elemento:
+  const numeros = [10, 20, 30];
+  for (let n of numeros) {
+    console.log(n);
+  }
+  // Saída:
+  // 10
+  // 20
+  // 30
+
+- Concatenando strings:
+  const nomes = ["Ana", "Bruno", "Carlos"];
+  console.log(nomes.join("\n"));
+  // Saída:
+  // Ana
+  // Bruno
+  // Carlos
+
+3) Impressão em colunas
+- Usando `\t` (tabulação):
+  const dados = [
+    ["Nome", "Idade"],
+    ["Ana", 20],
+    ["Bruno", 25]
+  ];
+  for (let linha of dados) {
+    console.log(linha.join("\t"));
+  }
+  // Saída:
+  // Nome   Idade
+  // Ana    20
+  // Bruno  25
+
+- Usando `padEnd()` para alinhar colunas:
+  const pessoas = [
+    { nome: "Ana", idade: 20 },
+    { nome: "Bruno", idade: 25 }
+  ];
+  for (let p of pessoas) {
+    console.log(p.nome.padEnd(10) + p.idade);
+  }
+  // Saída:
+  // Ana       20
+  // Bruno     25
+
+4) Impressão em formato de tabela
+- Usando `console.table()`:
+  const pessoas = [
+    { nome: "Ana", idade: 20 },
+    { nome: "Bruno", idade: 25 }
+  ];
+  console.table(pessoas);
+  // Saída em tabela organizada no console
+
+5) Casos especiais
+- Strings muito longas → podem quebrar alinhamento.
+- Diferentes ambientes (browser vs Node.js) → podem ter diferenças na exibição.
+- Para saída em arquivos, pode ser necessário formatar manualmente com `\n` e `\t`.
+
+6) Aplicações práticas
+- Exibir relatórios em colunas.
+- Mostrar listas de dados em tabelas.
+- Organizar resultados de cálculos ou estatísticas.
+- Melhorar legibilidade em programas interativos.
+
+Resumo:
+- Linhas: usar `console.log()` ou `join("\n")`.
+- Colunas: usar tabulação (`\t`) ou alinhamento com `padEnd()`.
+- Tabelas: usar `console.table()` para saída estruturada.
